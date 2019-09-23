@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=1
+#PBS -j oe
+#PBS -o ${bn}.out
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+macs2 callpeak --cutoff-analysis -q 0.01 -t ${f} -n ${bn} -g hs -f BAM &>${bn}.out
+
