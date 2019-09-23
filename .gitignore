@@ -1,0 +1,5 @@
+*.bin
+*.pdf
+*.png
+.DS_Store
+*.pyc
