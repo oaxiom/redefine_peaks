@@ -19,14 +19,14 @@ good_chroms = [str(i) for i in good_chroms]
 labs = []
 vals = []
 
-for f in sorted(list(glob.glob('raw_data/*_peaks.narrowPeak'))):
-    bn = os.path.split(f)[1].replace('_peaks.narrowPeak', '')
+for f in sorted(list(glob.glob('macs2_cluster/*_peaks.narrowPeak.gz'))):
+    bn = os.path.split(f)[1].replace('_peaks.narrowPeak.gz', '')
 
     print(bn)
     if bn in bad_samples:
         continue
     if bn.replace('.rp1', '').replace('.rp2', '') not in overlap_reps:
-        p = genelist(filename=f, name=bn, format=format.minimal_bed)
+        p = genelist(filename=f, name=bn, format=format.minimal_bed, gzip=True)
 
         newp = []
         for peak in p:
@@ -38,7 +38,7 @@ for f in sorted(list(glob.glob('raw_data/*_peaks.narrowPeak'))):
         p._optimiseData()
 
         p.save('glbs/%s.glb' % bn)
-        p.saveBED('beds/%s.bed' % bn)
+        p.saveBED('beds/%s.bed.gz' % bn, gzip=True)
 
 
         labs.append(bn)

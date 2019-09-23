@@ -15,10 +15,10 @@ trks = [
 
 
 peaks = [
-    glload(filename="../macs2/glbs/Hs_hesc_ctcf.rp1.glb"),
-    glload(filename="../macs2/glbs/Hs_hesc_ctcf.rp2.glb"),
-    glload(filename="../macs2/glbs/Hs_hesc_ctcf.rp3.glb"),
-    glload(filename="../macs2/glbs/Hs_hesc_ctcf.rp4.glb"),
+    genelist(filename="../macs2/beds/Hs_hesc_ctcf.rp1.bed.gz", format=format.minimal_bed, gzip=True),
+    genelist(filename="../macs2/beds/Hs_hesc_ctcf.rp2.bed.gz", format=format.minimal_bed, gzip=True),
+    genelist(filename="../macs2/beds/Hs_hesc_ctcf.rp3.bed.gz", format=format.minimal_bed, gzip=True),
+    genelist(filename="../macs2/beds/Hs_hesc_ctcf.rp4.bed.gz", format=format.minimal_bed, gzip=True),
     ]
 
 gl = glglob()
