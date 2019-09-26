@@ -2,6 +2,7 @@
 import sys, os, glob, numpy
 from glbase3 import *
 import  matplotlib.pyplot as plot
+config.draw_mode = 'pdf'
 
 peaks = [
     genelist(filename="../peaks/esc_med1.rp1_summits.bed.gz", format=format.minimal_bed, gzip=True),
